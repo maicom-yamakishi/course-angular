@@ -55,4 +55,15 @@ export class OfertasService {
   public getOfertas(): Array<any> {
     return this.ofertas;
   }
+
+  public getOfertas2(): Promise<Oferta[]> {
+    return new Promise((resolve, reject) => {
+      let resolved = true;
+      if (resolved) {
+        setTimeout(() => resolve(this.ofertas), 3000);
+      } else {
+        reject({ codigo_erro: 404, mensage: "erro" });
+      }
+    });
+  }
 }
